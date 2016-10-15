@@ -8,7 +8,7 @@ function MovingObject(opts) {
 MovingObject.prototype.draw = function (ctx) {
   ctx.beginPath()
   ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI);
-  // ctx.fillStyle = "blue"
+  ctx.fillStyle = this.COLOR
   ctx.fill();
 }
 
@@ -24,5 +24,7 @@ MovingObject.prototype.isCollideWith = function (otherObj) {
   if (this === otherObj) { return false }
   return (distance < this.radius + otherObj.radius);
 };
+
+MovingObject.prototype.collideWith = function () {}
 
 module.exports = MovingObject;
